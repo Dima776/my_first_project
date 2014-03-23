@@ -28,20 +28,7 @@ typedef struct
 	//wchar_t money[50];	
 }INFO;
 
-//изначальное заполнение массива структур
-//INFO info[SIZE]={
-//	{TEXT("Скоробогатов Антон"), TEXT("7 февраля 1991"), TEXT("anton1991@mail.ru"), /*TEXT("ул.Новокузнецкая, д.25, кв.2"),TEXT("16587421")*/},
-//	{TEXT("Михайленко Николай"), TEXT("17 января 1990"),  TEXT("nick1990@mail.ru"),/* TEXT("ул.Степная, д.11"),TEXT("16587421)"*/},
-//	{TEXT("Филоненко Анастасия"), TEXT("4 марта 1991"),  TEXT("nastya@mail.ru")/*, TEXT("ул.Морская, д.14, кв.12"),TEXT("16587421")*/},
-//	{TEXT("Духницкий Иван"), TEXT("8 июля 1991"), TEXT("ivan_duh@google.com")/*, TEXT("ул.Патриотическая, д.1, кв.15"),TEXT("16587421")*/},
-//	{TEXT("Шматко Мария"), TEXT("17 апреля 1990"),  TEXT("maria_maria@yandex.ru")/* ,TEXT("ул.Портовая, д.17, кв.75"),TEXT("16587421")*/},
-//	{TEXT("Переверзева Анна"), TEXT("21 сентября 1991"),  TEXT("anna91@pisem.net")/*, TEXT("ул.Вокзальная, д.12-а, кв.51"),TEXT("16587421")*/},
-//	{TEXT("Синченко Ярослав"), TEXT("6 декабря 1990"),  TEXT("yaric@ukr.net") /*,TEXT("ул.Богдана Хмельницкого, д.3"),TEXT("16587421")*/},
-//	{TEXT("Миллер Борис"), TEXT("10 августа 1991"), TEXT("miller_boris@yandex.ru")/*, TEXT("ул.Заводская, д.2, кв.10"),TEXT("16587421")*/},
-//	{TEXT("Зинкевич Роман"), TEXT("16 марта 1989"),	 TEXT("roman@ukr.net")/*, TEXT("ул.Правды, д.18, кв.17"),TEXT("16587421")*/},
-//	{TEXT("Светличный Павел"), TEXT("10 февраля 1991"),  TEXT("pasha@yandex.ru")/*, TEXT("ул.Молодёжная, д.54, кв.142"),TEXT("16587421")*/},
-//	};
-//
+
 ////на основе статического массива создаём вектор
 //vector<INFO> v(info, info+SIZE);
 
@@ -85,19 +72,18 @@ typedef struct
 //	//получаем информацию о добавляемом элементе из тестовых полей
 //	GetWindowText(hwnd1, add.FullName, sizeof(add.FullName));
 ////	GetWindowText(hwnd2, add.Address, sizeof(add.Address));										
-//	GetWindowText(hwnd3, add.BirthDate, sizeof(add.Date));							
-//	//GetWindowText(hwnd4, add.Phone, sizeof(add.Phone));					
-//	GetWindowText(hwnd5, add.Email, sizeof(add.Writer));
-//	//GetWindowText(hwnd6, add.money, sizeof(add.money));
-//	
-//	//добавляем её в список
-//	//SendMessage(hwndList, LB_ADDSTRING, 0, (LPARAM)add.FullName);
-//	
-//		SendMessage(IDC_LIST_LIB1, LB_ADDSTRING, 0, (LPARAM)add.FullName);
-//		SendMessage(IDC_LIST_ST1, LB_ADDSTRING, 0, (LPARAM)add.FullName);
-//	//и в вектор
-//	v.push_back(add);
-//}
+	GetWindowText(hwnd3, add.BirthDate, sizeof(add.Date));							
+	//GetWindowText(hwnd4, add.Phone, sizeof(add.Phone));					
+	GetWindowText(hwnd5, add.Email, sizeof(add.Writer));
+	//GetWindowText(hwnd6, add.money, sizeof(add.money));
+	
+	//добавляем её в список
+	//SendMessage(hwndList, LB_ADDSTRING, 0, (LPARAM)add.FullName);
+			SendMessage(IDC_LIST_LIB1, LB_ADDSTRING, 0, (LPARAM)add.FullName);
+		SendMessage(IDC_LIST_ST1, LB_ADDSTRING, 0, (LPARAM)add.FullName);
+	//и в вектор
+	v.push_back(add);
+}
 int WINAPI WinMain(HINSTANCE hInstance,	HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
 	//создаём главное окно...
